@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <h1>You are already logged in. Log-out to login into another user.</h1>
+    {% else %}
+        <div class="scroll">
+            <form method="POST" style="margin: 0px;">
+                {% csrf_token %}
+                <div class="login">
+                    <h1>LOGIN</h1>
+                    <div class="textbox">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" placeholder="USER NAME" name="username" value="">
+                    </div>
+                    <div class="textbox">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" placeholder="PASSWORD" name="password" value="">
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="button">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

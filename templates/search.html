@@ -1,0 +1,54 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block header %}
+
+{% endblock %}
+
+
+{% block body %}
+    <form method="POST" style="margin: 0px;">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Blood ABO Type * :</th>
+                <td><input type="text" name="abo"></td>
+            </tr>
+            <tr>
+                <th>Blood Rh Type * :</th>
+                <td><input type="text" name="rh"></td>
+            </tr>
+            <tr>
+                <th>City :</th>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <tr>
+                <th>District :</th>
+                <td><input type="text" name="district"></td>
+            </tr>
+            <tr>
+                <th>State :</th>
+                <td><input type="text" name="state"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button type="submit" class="button">Search</button></td>
+            </tr>
+        </table>
+    </form>
+    
+    {% if display_data %}
+        <div>
+            <table>
+                <tr>
+                    <th>Sno</th>
+                    <th>ABO Group</th>
+                    <th>Rh Group</th>
+                    <th>Hospital Name</th>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
