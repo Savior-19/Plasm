@@ -45,9 +45,20 @@
                     <th>ABO Group</th>
                     <th>Rh Group</th>
                     <th>Hospital Name</th>
+                    <th>Status</th>
+                    <th>Age Bracket</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                    <th>City</th>
                 </tr>
-                <tr>
-                </tr>
+                {% for patient in patient_data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        {% for attribute in patient %}
+                            <td>{{ attribute }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </table>
         </div>
     {% endif %}
