@@ -56,6 +56,7 @@ def DonorSearch(request) :
         return render(request, 'search.html', {'display_data':False})
     else :
         global patient_data
+        patient_data = []
 
         # Recieve data from the html-form
         blood_requirement = {

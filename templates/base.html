@@ -7,9 +7,16 @@
         {% load static %}
         <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
         <!--<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         {% block header %} 
         
         {% endblock %}
+        <style>
+            .vio{
+             background-color: rgb(240, 228, 228);;
+              font-size: 17px;
+                }
+        </style>
     </head>
 
     <body style="margin: auto;">
@@ -22,23 +29,23 @@
                     </a>
                 </li>
                 <li style="float: right;">
-                    <a href="/donor-search">Donor Search</a>
+                    <a href="/donor-search"><button type="button" class="btn btn-outline-primary rounded-pill">Donor search</button></a>
                 </li>
                 <li style="float: right;">
                     {% if user.is_authenticated %}
-                        <a href="/logout">Logout</a>
+                        <a href="/logout"><button type="button" class="btn btn-outline-success rounded-pill">Logout</button></a>
                     {% else %}
-                        <a href="/login">Login</a>
+                        <a href="/login"><button type="button" class="btn btn-outline-success rounded-pill">Login</button></a>
                     {% endif %}
                 </li>
                 {% if user.is_authenticated %}
                     {% if user.is_superuser %}
                         <li style="float: right; width: 110px;">
-                            <a href="/admin">My Account</a>
+                            <a href="/admin"><button type="button" class="btn btn-outline-secondary rounded-pill">My Account</button></a>
                         </li>
                     {% endif %}
                     <li style="float: right; width: 110px;">
-                        <a href="/donor-search">Find Donors</a>
+                        <a href="/donor-search"><button type="button" class="btn btn-outline-primary rounded-pill">Find Donors</button></a>
                     </li>
                 {% endif %}
             </ul >
@@ -51,7 +58,7 @@
         </div>
         
         <div class="copyright">
-            <p style="margin-top: 10px;">© Copyright - A Savior19 initiative </p>
+            <p style="margin-top: 10px;"><footer>© Copyright - A Savior19 initiative </footer></p>
         </div>
 
     </body>

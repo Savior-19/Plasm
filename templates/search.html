@@ -2,39 +2,52 @@
 {% load static %}
 
 {% block header %}
-
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
 {% endblock %}
 
 
 {% block body %}
     <form method="POST" style="margin: 0px;">
         {% csrf_token %}
-        <table>
-            <tr>
-                <th>Blood ABO Type * :</th>
-                <td><input type="text" name="abo"></td>
-            </tr>
-            <tr>
-                <th>Blood Rh Type * :</th>
-                <td><input type="text" name="rh"></td>
-            </tr>
-            <tr>
-                <th>City :</th>
-                <td><input type="text" name="city"></td>
-            </tr>
-            <tr>
-                <th>District :</th>
-                <td><input type="text" name="district"></td>
-            </tr>
-            <tr>
-                <th>State :</th>
-                <td><input type="text" name="state"></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><button type="submit" class="button">Search</button></td>
-            </tr>
-        </table>
+        <div style="margin-left:100px ;">
+            <table>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bid_total_weight">Blood ABO Type * :-</label>
+                        <input class="form-control values-input" type="text" name="abo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bid_total_weight">Blood Rh Type:-</label>
+                        <input class="form-control values-input" type="text" name="rh" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bid_total_weight">City:-</label>
+                        <input class="form-control values-input" type="text" name="city" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bid_total_weight">District:-</label>
+                        <input class="form-control values-input" type="text" name="district" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="bid_total_weight">State:-</label>
+                        <input class="form-control values-input" type="text" name="state" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <button type="submit" class="button">Search</button>
+                    </div>
+                </div>
+            </table>
+        </div>
     </form>
     
     {% if display_data %}
