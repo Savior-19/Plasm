@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="text-gray-700 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2001/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Plasm</span>
+          </a>
+          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900">Home</a>
+            <a class="mr-5 hover:text-gray-900">Download</a>
+            
+          </nav>
+          <button class="bg-green-500 mr-5 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full">
+            Login
+          </button>
+          <button class="bg-green-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full">
+            Donar Search
+          </button>
+        </div>
+      </header>
+      <br>
+      <br>
+
+<form   accept-charset="UTF-8" method="post">
+<ul class="error_explanation"></ul>
+<div class="row">
+    <div class="col-md-6 form-group">
+        Blood ABO Type *:-
+<input type="text" name="abo" class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        Blood Rh Type * :-
+<input type="text" name="rh" class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        City :-
+<input type="text" name="city" class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        District :-
+<input type="text" name="district" class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        State :-
+<input type="text" name="state" class="form-control">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-outline-success rounded-pill my-3 text-center" type="submit">Search</button>
+    </div>
+</div>
+</form>
+</body>
+</html>

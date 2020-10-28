@@ -6,43 +6,48 @@
         </title>
         {% load static %}
         <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
-        <!--<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">-->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         {% block header %} 
         
         {% endblock %}
     </head>
 
-    <body style="margin: auto;">
-        <nav class="vio">
-            <ul>
-                <li class="nohover" style="width: 2em;"></li>
-                <li class="nohover" style="width: fit-content;">
-                    <a href="/" style="padding: 0%;">
-                        <h1 style="color: black; font-size: 35px; margin: 0em; font-family: forte; padding-top: 1em;"> Plasm </h1>
-                    </a>
-                </li>
-                <li style="float: right;">
-                    <a href="/donor-search">Donor Search</a>
-                </li>
-                <li style="float: right;">
+    <body >
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a><img class="image-fluid" src="{%  static 'img/favicon.ico' %}"></a>
+            <a class="navbar-brand mx-4" href="#">Plasm</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                
+                    <a href="/donor-search"><button type="button" class="btn btn-outline-success mx-7 rounded-pill">Donor Search</button></a>
+                
                     {% if user.is_authenticated %}
-                        <a href="/logout">Logout</a>
+                    
+                    <a href="/logout"><button type="button" class="btn btn-outline-success rounded-pill">Logout</button></a>
+                        
                     {% else %}
-                        <a href="/login">Login</a>
+                    <a href="/login"><button type="button" class="btn btn-outline-success mx-2 rounded-pill">Log In</button></a>
+                        
                     {% endif %}
-                </li>
+               
                 {% if user.is_authenticated %}
                     {% if user.is_superuser %}
                         <li style="float: right; width: 110px;">
-                            <a href="/admin">My Account</a>
+                            <a href="/admin"><button type="button" class="btn btn-outline-success mx-2 rounded-pill">My Account</button></a>
+    
                         </li>
                     {% endif %}
                     <li style="float: right; width: 110px;">
-                        <a href="/donor-search">Find Donors</a>
+                        <a href="/donor-search"><button type="button" class="btn btn-outline-success mx-2 rounded-pill">Find Donors</button></a>
                     </li>
                 {% endif %}
-            </ul >
-        </nav>
+              
+              
+            </div>
+          </nav>
 
         <div class="pagebody">
             {% block body %} 
@@ -51,8 +56,8 @@
         </div>
         
         <div class="copyright">
-            <p style="margin-top: 10px;">© Copyright - A Savior19 initiative </p>
-        </div>
+           <footer><p style="margin-top: 10px;">© Copyright - A Savior19 initiative </p>
+           </div></footer> 
 
     </body>
 </html>
