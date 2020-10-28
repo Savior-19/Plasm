@@ -1,0 +1,61 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+body{
+    background: linear-gradient(to bottom right, rgb(1, 255, 255), rgb(168, 7, 231));
+}
+.scroll{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+img{
+    margin-top: 45px;
+    height: 400px;
+    width: 500px;
+    padding: 30px;
+}
+.container
+{
+margin-top: 80px;
+background-color: white;
+padding: 10px;
+border-radius: 50px;
+}
+.textbox{
+    width: 100%;
+    height: fit-content;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid indigo;
+}
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    width: 200px;
+    margin: 10px;
+    color: black;
+}
+ h2{
+     width: 100%;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 5px solid indigo;
+    border-width: 4px;
+}
+p{
+    font-size: medium;
+}
+.green{
+    color: green;
+}
+@media only screen and (max-width: 1100px) {
+    img {
+        
+      width: 350px;
+      height: 400px;
+    }
+  }
