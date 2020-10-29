@@ -1,43 +1,72 @@
 {% extends 'base.html' %} 
 {% load static %}
-
 {% block header %}
-
+    <title>Search</title>
+    <link rel="stylesheet" href="{%  static 'css/search.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 {% endblock %}
 
+{% block body %} 
+        <br>
+        <br>
+        <center><h2 style="font-size: large;">Search</h2></center> 
+        <br>
+        <br>
+        
+        <div class="container user-registration">
+            <div class="row">
+                <div class="col-md-5 user-registration__col my-5 ">
+                    <form class="new_user" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                Blood ABO Type *:-
+                                <br><br>
+                                <input type="text" name="abo" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                Blood Rh Type * :-
+                                <br><br>
+                                <input type="text" name="rh" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                City :-
+                                <br><br>
+                                <input type="text" name="city" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                District :-
+                                <br><br>
+                                <input type="text" name="district" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                State :-
+                                <br><br>
+                                <input type="text" name="state" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-outline-success rounded-pill my-3 text-center" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-7">
+                    <img class="leftimg" src="{%  static 'img/1.jpg' %}" alt="Signin flow">
+                </div>
+            </div>
+        </div>
 
-{% block body %}
-    <form method="POST" style="margin: 0px;">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <th>Blood ABO Type * :</th>
-                <td><input type="text" name="abo"></td>
-            </tr>
-            <tr>
-                <th>Blood Rh Type * :</th>
-                <td><input type="text" name="rh"></td>
-            </tr>
-            <tr>
-                <th>City :</th>
-                <td><input type="text" name="city"></td>
-            </tr>
-            <tr>
-                <th>District :</th>
-                <td><input type="text" name="district"></td>
-            </tr>
-            <tr>
-                <th>State :</th>
-                <td><input type="text" name="state"></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><button type="submit" class="button">Search</button></td>
-            </tr>
-        </table>
-    </form>
-    
-    {% if display_data %}
+        {% if display_data %}
         <div>
             <table>
                 <tr>

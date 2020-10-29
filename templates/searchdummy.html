@@ -1,0 +1,65 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block header %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static 'css/search.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <form method="POST" style="margin: 0px;">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Blood ABO Type * :</th>
+                <td><input type="text" name="abo"></td>
+            </tr>
+            <tr>
+                <th>Blood Rh Type * :</th>
+                <td><input type="text" name="rh"></td>
+            </tr>
+            <tr>
+                <th>City :</th>
+                <td><input type="text" name="city"></td>
+            </tr>
+            <tr>
+                <th>District :</th>
+                <td><input type="text" name="district"></td>
+            </tr>
+            <tr>
+                <th>State :</th>
+                <td><input type="text" name="state"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button type="submit" class="button">Search</button></td>
+            </tr>
+        </table>
+    </form>
+    
+    {% if display_data %}
+        <div>
+            <table>
+                <tr>
+                    <th>Sno</th>
+                    <th>ABO Group</th>
+                    <th>Rh Group</th>
+                    <th>Hospital Name</th>
+                    <th>Status</th>
+                    <th>Age Bracket</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                    <th>City</th>
+                </tr>
+                {% for patient in patient_data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        {% for attribute in patient %}
+                            <td>{{ attribute }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
